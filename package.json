@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "turbo": "^2.4.4"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "node apps/server/dist/main"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "packageManager": "npm@10.9.0"
+}
