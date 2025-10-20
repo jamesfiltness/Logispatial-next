@@ -7,7 +7,11 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../', 'client', 'dist'),
+      rootPath:
+        process.env.NODE_ENV === 'production'
+          ? join(__dirname, '../../', 'client', 'dist')
+          : join(__dirname, '../../', 'client'),
+      exclude: ['/server/*splat'],
     }),
   ],
   controllers: [AppController],
